@@ -29,3 +29,14 @@ function positiveSum(arr) {
       return 0
     }
   }
+
+// alternate way without needing reduce
+function positiveSum(arr) {
+let total = 0;    
+for (i = 0; i < arr.length; i++) {    // setup loop to go through array of given length
+    if (arr[i] > 0) {                   // if arr[i] is greater than zero
+    total += arr[i];                  // add arr[i] to total
+    }
+}
+return total;                         // return total
+}
