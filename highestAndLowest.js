@@ -12,18 +12,17 @@
 // Output string must be two numbers separated by a single space, and highest number is first.
 
 function highAndLow(numbers){
-    let largest = 0;
-    let lowest = 0;
     let numsArray = numbers.split(" ")
+    let largest = numsArray[0];
+    let lowest = numsArray[0];
+    console.log(numbers)
     console.log(numsArray)
     for (i=0;i<numsArray.length;i++) {
-      console.log(numsArray[i])
-      console.log(`${largest} is largest`)
-      if (numsArray[i] <= lowest) {
-        lowest = numsArray[i]
-      } else if (numsArray[i] > largest) {
-        largest = numsArray[i]
-      } else {}
+      if (parseInt(numsArray[i]) < lowest) {
+        lowest = parseInt(numsArray[i])
+      } else if (parseInt(numsArray[i]) > largest) {
+        largest = parseInt(numsArray[i])
+      }
     }
     return `${largest} ${lowest}`
   }
