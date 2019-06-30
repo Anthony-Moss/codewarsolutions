@@ -6,9 +6,9 @@ function removeChar(str){
     let result = ''
     result += str.slice(1, (str.length-1))
     return result
-}
+};
 
 // refactored
 function removeChar(str){
-    return str.slice(1, (str.length-1)) 
+    return str.slice(1, -1) ;
 };
