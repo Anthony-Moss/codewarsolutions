@@ -11,3 +11,8 @@ function repeatStr (n, s) {
     }
     return result;
 }
+
+// alternate simpler answer
+function repeatStrBest (n, s) {
+    return s.repeat(n);
+}
