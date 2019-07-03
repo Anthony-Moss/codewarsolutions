@@ -11,7 +11,6 @@
 // first attempt
 function disemvowel(str) {
     let result = ''
-    let vowels = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u']
     for (i=0;i<str.length;i++) {
       if (str[i] ==='a' || str[i] ==='e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u' ||
           str[i] ==='A' || str[i] ==='E' || str[i] === 'I' || str[i] === 'O' || str[i] === 'U') {
@@ -22,3 +21,8 @@ function disemvowel(str) {
       return result
   }
 
+  // redone/fefactored
+  // uses replace instead of the long for loop
+  function disemvowel(str) {
+    return str.replace(/[aeiou]/gi, '');
+  }
