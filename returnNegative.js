@@ -19,3 +19,8 @@ function makeNegative(num) {
     return num
     }
   }
+
+// refactored solution using ternary operator
+function makeNegative(num) {
+    return (num < 0 ? num : -num)
+}
