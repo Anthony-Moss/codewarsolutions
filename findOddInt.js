@@ -22,20 +22,15 @@ function findOdd(A) {
       return result;
   }
 
-
-
-// First try unsucessful 
-// maybe  try again
-// function findOdd(A) {
-//     let result = 0;
-//     let numbers = {}
-//     let numberArr = []
-//     let numberCount = [...A]
-//     A.sort().map((number) => {
-//       numbers.number = number;
-//       numbers.quantity = 1;
-//       numberArr.push([{numbers: numbers}])
-//     })
-//     console.log(numbers)
-//     return result;
-//   }
+// refactored
+function findOdd(A) {
+    let numObj = {};
+    A.forEach((i) => {
+        numObj[i] ? numObj[i]++ : numObj[i] = 1;
+    });
+    for (j in numObj) {
+        if(numObj[j] % 2 !== 0) {
+            return Number(j);
+        }
+    }
+}
