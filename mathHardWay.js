@@ -15,11 +15,14 @@ Math.round = function(number) {
     let result = ''
     let numStr = number.toString()
     let dot = numStr.indexOf(".")
-      if (parseInt(numStr[dot+1]) >= 5) {
-      console.log(`return ${number} + 1`)
-      result += (numStr.slice(0,dot) + 1)
-    } else if (parseInt(numStr[dot+1]) < 5) {
-      result += numStr.slice(0,(dot))
+    if (dot >=0) { 
+        if (parseInt(numStr[dot+1]) >= 5) {
+            result += (parseInt(numStr.slice(0,dot)) + 1)
+        } else if (parseInt(numStr[dot+1]) < 5) {
+            result += parseInt(numStr.slice(0,(dot)))
+        }
+        return(parseInt(result))
+    } else {
+        return number
     }
-    return(parseInt(result))
-  };
+};
