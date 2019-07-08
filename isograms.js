@@ -4,6 +4,7 @@
 // isIsogram( "aba" ) == false
 // isIsogram( "moOse" ) == false // -- ignore letter case
 
+// first version unfactored
 function isIsogram(str) {
     let letters = '';
     let result = true
@@ -15,6 +16,17 @@ function isIsogram(str) {
         } else {
             letters += letter
         } 
+    });
+    return result
+}
+
+// refactored using ternary opp
+function isIsogram(str) {
+    const lowered = str.toLowerCase().split("")
+    let letters = '';
+    let result = true
+    lowered.map((letter) => {
+        return (letters.indexOf(letter) >=0 ? result = false : letters += letter)
     });
     return result
 }
