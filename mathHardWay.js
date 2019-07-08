@@ -10,7 +10,7 @@
 //  Math.round(), Math.ceil(), and Math.floor() without any access to the
 // Math object
 
-// First function attempt one 
+// round function attempt one
 Math.round = function(number) {
     let result = ''
     let numStr = number.toString()
@@ -22,6 +22,16 @@ Math.round = function(number) {
             result += parseInt(numStr.slice(0,(dot)))
         }
         return(parseInt(result))
+    } else {
+        return number
+    }
+};
+
+Math.ceil = function(number) {
+    let numStr = number.toString()
+    let dot = numStr.indexOf(".")
+    if (dot >=0) {
+        return (parseInt(numStr.slice(0,dot)) + 1)
     } else {
         return number
     }
