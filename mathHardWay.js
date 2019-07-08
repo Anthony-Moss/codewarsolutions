@@ -36,3 +36,13 @@ Math.ceil = function(number) {
         return number
     }
 };
+
+Math.floor = function(number) {
+    let numStr = number.toString()
+    let dot = numStr.indexOf(".")
+    if (dot >=0) {
+    return parseInt(numStr.slice(0,dot))
+    } else {
+        return number
+    }
+}
