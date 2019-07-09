@@ -22,3 +22,20 @@ function solution(number){
     return sum
     }
 }
+
+// quick refactor
+function solution(number){
+    let multiples = []
+    for (i=1; i<number; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+            multiples.push(i)
+        }
+    }
+    if (multiples.length) {
+        return multiples.reduce((total, num) => {
+            return total += num
+        });
+    } else {
+        return 0
+    }
+}
