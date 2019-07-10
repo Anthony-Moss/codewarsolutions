@@ -65,5 +65,33 @@ function dirReduc(arr){
     }
     return revisedDirections
   }
+
+
+//   second attempt 
+function dirReduc(arr){
+    let initialDirections = arr
+    let counter = 0
+    let revisedDirections = []
+    let doneRefactoring = false
+    let opposites = {
+                      NORTH:'SOUTH',
+                      SOUTH:'NORTH',
+                      EAST:'WEST',
+                      WEST:'EAST'  
+                    }
+      if (initialDirections[1] === opposites[initialDirections[0]]) {
+        revisedDirections = initialDirections.slice(2,initialDirections.length)
+  //       console.log(revisedDirections)
+        if (revisedDirections.length <= 2) {
+          revisedDirections = revisedDirections.slice(2,revisedDirections.length)
+        } else if (revisedDirections.length <= 2 && revisedDirections[1] !== opposites[revisedDirections[0]]) {
+          return revisedDirections
+        } else if (revisedDirections.length <= 2 && revisedDirections[1] === opposites[revisedDirections[0]]) {
+          return []
+        }
+      }  
+  //   }
+    return revisedDirections
+  }
   
   
