@@ -37,61 +37,93 @@
 // Notes
 // Not all paths can be made simpler. The path ["NORTH", "WEST", "SOUTH", "EAST"] is not reducible. "NORTH" and "WEST", "WEST" and "SOUTH", "SOUTH" and "EAST" are not directly opposite of each other and can't become such. Hence the result path is itself : ["NORTH", "WEST", "SOUTH", "EAST"].
 
-// first attempt not working
+// third attempt, half right
+// it loops through and checks if opposites are together, if they are removes them and
+// goes to next word.
+// it is broken for times dealing with south then north, all issues when console log show
+// south, north is in the array when it shouldnt
+// just need to review code with fresh eyes for whats causing that specifically
 function dirReduc(arr){
-    let initialDirections = arr
-    let counter = 0
-    let revisedDirections = []
-    let doneRefactoring = false
+    let currentDirs = arr
+    let revisedDir = []
     let opposites = {
-                      NORTH:'SOUTH',
-                      SOUTH:'NORTH',
-                      EAST:'WEST',
-                      WEST:'EAST'  
-                    }
-    for (i=0; i<initialDirections.length; i++) {
-  //     while (!doneRefactoring) {
-      if (initialDirections[i+1] === opposites[initialDirections[i]]) {
-        revisedDirections = initialDirections.slice(2,initialDirections.length)
-        console.log(revisedDirections)
-        if (revisedDirections.length >= 2 && revisedDirections[1] === opposites[revisedDirections[0]]) {
-          revisedDirections = revisedDirections.slice(2,revisedDirections.length)
-        } else if (revisedDirections.length <= 2 && revisedDirections[1] !== opposites[revisedDirections[0]]) {
-          return revisedDirections
-        } else if (revisedDirections.length <= 2 && revisedDirections[1] === opposites[revisedDirections[0]]) {
-          return []
+        NORTH:'SOUTH',
+        SOUTH:'NORTH',
+        EAST:'WEST',
+        WEST:'EAST'  
         }
-      }  
+    for (i=0; i<arr.length; i++) {
+        console.log(`this is current dirs ${currentDirs} time ${i}`)
+        if (currentDirs.length > 1) {
+            if (currentDirs[i] === opposites[currentDirs[i+1]]) {
+                for (j=0; j<1; j++){
+                    currentDirs.shift()
+                } 
+            } else {
+                revisedDir.push(currentDirs[i])   
+            }
+        } else {
+            return currentDirs[0]
+        }
     }
-    return revisedDirections
-  }
+    return revisedDir
+}
 
 
-//   second attempt 
-function dirReduc(arr){
-    let initialDirections = arr
-    let counter = 0
-    let revisedDirections = []
-    let doneRefactoring = false
-    let opposites = {
-                      NORTH:'SOUTH',
-                      SOUTH:'NORTH',
-                      EAST:'WEST',
-                      WEST:'EAST'  
-                    }
-      if (initialDirections[1] === opposites[initialDirections[0]]) {
-        revisedDirections = initialDirections.slice(2,initialDirections.length)
-  //       console.log(revisedDirections)
-        if (revisedDirections.length <= 2) {
-          revisedDirections = revisedDirections.slice(2,revisedDirections.length)
-        } else if (revisedDirections.length <= 2 && revisedDirections[1] !== opposites[revisedDirections[0]]) {
-          return revisedDirections
-        } else if (revisedDirections.length <= 2 && revisedDirections[1] === opposites[revisedDirections[0]]) {
-          return []
-        }
-      }  
-  //   }
-    return revisedDirections
-  }
-  
-  
+
+// first  attempt
+// function dirReduc(arr){
+//   let initialDirections = arr
+//   let counter = 0
+//   let revisedDirections = []
+//   let doneRefactoring = false
+//   let opposites = {
+//                     NORTH:'SOUTH',
+//                     SOUTH:'NORTH',
+//                     EAST:'WEST',
+//                     WEST:'EAST'  
+//                   }
+//   for (i=0; i<initialDirections.length; i++) {
+// //     while (!doneRefactoring) {
+//     if (initialDirections[i+1] === opposites[initialDirections[i]]) {
+//       revisedDirections = initialDirections.slice(2,initialDirections.length)
+//       console.log(revisedDirections)
+//       if (revisedDirections.length >= 2 && revisedDirections[1] === opposites[revisedDirections[0]]) {
+//         revisedDirections = revisedDirections.slice(2,revisedDirections.length)
+//       } else if (revisedDirections.length <= 2 && revisedDirections[1] !== opposites[revisedDirections[0]]) {
+//         return revisedDirections
+//       } else if (revisedDirections.length <= 2 && revisedDirections[1] === opposites[revisedDirections[0]]) {
+//         return []
+//       }
+//     }  
+//   }
+//   return revisedDirections
+// }
+
+
+// //   second attempt 
+// function dirReduc(arr){
+//   let initialDirections = arr
+//   let counter = 0
+//   let revisedDirections = []
+//   let doneRefactoring = false
+//   let opposites = {
+//                     NORTH:'SOUTH',
+//                     SOUTH:'NORTH',
+//                     EAST:'WEST',
+//                     WEST:'EAST'  
+//                   }
+//     if (initialDirections[1] === opposites[initialDirections[0]]) {
+//       revisedDirections = initialDirections.slice(2,initialDirections.length)
+// //       console.log(revisedDirections)
+//       if (revisedDirections.length <= 2) {
+//         revisedDirections = revisedDirections.slice(2,revisedDirections.length)
+//       } else if (revisedDirections.length <= 2 && revisedDirections[1] !== opposites[revisedDirections[0]]) {
+//         return revisedDirections
+//       } else if (revisedDirections.length <= 2 && revisedDirections[1] === opposites[revisedDirections[0]]) {
+//         return []
+//       }
+//     }  
+// //   }
+//   return revisedDirections
+// }
