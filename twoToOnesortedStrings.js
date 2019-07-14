@@ -27,3 +27,24 @@ function longest(s1, s2) {
     console.log(alreadyIn.sort())
     return alreadyIn.sort().toString().replace(/,/g,  '')
 }
+
+
+// refactored for readability
+function longest(s1, s2) {
+    let fullArr = (s1 + s2).split('')
+    let alreadyIn = []
+    for (let i of fullArr) {
+        if (alreadyIn.includes(i) === false) {
+            alreadyIn.push(i);
+        }
+    }
+    return alreadyIn.sort().toString().replace(/,/g,  '')
+}
+
+
+// best practices from code wars
+// function longest(s1, s2) {
+//     return Array.from(new Set(s1 + s2)).sort().join('');
+// }
+
+// const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
