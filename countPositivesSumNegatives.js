@@ -28,4 +28,15 @@ function countPositivesSumNegatives(input) {
 
 
 // quick refactor 
-
+function countPositivesSumNegatives(input) {
+    let result = []
+    if ((!input) || input.length === 0) {
+        return result;
+    } else {
+        result = [0, 0]
+        input.map(number => {
+            return (number <= 0 ? result[1] += number : result[0] += 1) 
+        })
+        return result
+    }
+}
