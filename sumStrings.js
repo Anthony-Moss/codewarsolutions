@@ -19,20 +19,19 @@ function sumStrings(a,b) {
   }
 
 // the long way
-// its partially working
-// but its getting caught with carrying the one
-// as of now Im only handeling the case for  the first
 function sumStrings(a,b) {
     let arrA = a.split("");
     let arrB = b.split("");
     while (arrA[0] === '0') {
-        arrA.shift()
+      arrA.shift()
     }
     while (arrB[0] === '0') {
-        arrB.shift()
+      arrB.shift()
     }
     let shortest = arrA
     let longest = arrB
+    console.log(longest)
+    console.log(shortest)
     let result = []
     if (shortest.length > longest.length) {
         shortest = arrB
@@ -41,6 +40,7 @@ function sumStrings(a,b) {
     let counter = 1
     console.log(longest.length)
     console.log(shortest.length)
+    let firstNum = 0;
     shortest.reverse().map(number => {
         number = parseInt(number)
         console.log(`this is the number in loop ${number} `)
@@ -59,35 +59,44 @@ function sumStrings(a,b) {
         } else {
 //           first we need to handle the first longest value
 //         it will be equal to the sum - 10 because its the remainder value
-            longest[longest.length-counter] = (sum - 10)
+          longest[longest.length-counter] = (sum - 10)
 //         Next fork - can remainder go there?
 //         if the next number in longest array(going in reverse) isnt 9
 //         the remainder can just go there
             if (longest[longest.length-counter-1] !== 9) {
-                longest[longest.length-counter-1] = parseInt(longest[longest.length-counter-1])
-                longest[longest.length-counter-1] += 1
-                counter += 1
+              longest[longest.length-counter-1] = parseInt(longest[longest.length-counter-1])
+              longest[longest.length-counter-1] += 1
+              counter += 1
 //         if the next number in array is 9 we have to check the next number
             } else {
             // check the chain for 9's so 1 gets carried
-                for (i=longest.length-counter-2; i>=0; i--) {
+            for (i=longest.length-counter-2; i>=0; i--) {
+                  console.log(`am I running ${longest}`)
 //             if the value of the next number in line in longest is 9
-//             if longest[i] === 9 
 //             we have to set the number to 0
-//             then we have to check the next number
-                    if (longest[i] === 9) {
-                        longest[i] = 0
-                        longest[i-1] = parseInt(longest[i-1])
-                        longest[i-1] += 1
-                        counter +=1
+//             then we just move on 
+                if (longest[i] === 9) {
+//                     longest[i] = 0
+//                     longest[i-1] = parseInt(longest[i-1])
+//                     longest[i-1] += 1
+//                     counter +=1
                     } 
                 }
             }
         }
+    console.log(`sum is ${sum}`)
+    firstNum = sum
     })
-    console.log(longest[0])
-    let stringNum = longest.toString().replace(/,/g, "")
-    console.log(stringNum)
+    console.log(`this is the firstNum ${firstNum}`)
+//     }
+//     console.log(longest[0])
+
+let stringNum = longest.toString().replace(/,/g, "")
+    
+    if (firstNum > 10 && longest.length == shortest.length){
+        return "1".concat("", stringNum)
+        }
+// console.log(stringNum)
     return stringNum
 }
 
