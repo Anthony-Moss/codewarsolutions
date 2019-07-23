@@ -13,3 +13,8 @@ function filter_list(l) {
     })
     return result
 }
+
+// second attempt using .filter method
+function filter_list(l) {
+    return l.filter(num => typeof num == "number")
+}
