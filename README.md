@@ -1,7 +1,7 @@
 # CodeWars
 This is my GitHub repository of my kata solutions from [codewars.com](https://www.codewars.com/).
 
-![Profile badge] (https://www.codewars.com/users/anthony_moss/badges/large)
+![Profile badge](https://www.codewars.com/users/anthony_moss/badges/large)
 
 ## About CodeWars
 CodeWars is a a website that provides you with challenges from a variety of programming languanges and difficulties. <br />
@@ -13,7 +13,7 @@ Users are ranked based on their record of challenges completed.
 - 4 kyu - [Sum Strings as Numbers]
 - 5 kyu - [Math Issues]
 - 5 kyu - [Moving Zeros To The End]
-- 5 kyu - [Where my anagrams at?] (anagrams.js)
+- 5 kyu - [Where my anagrams at?](anagrams.js)
 - 6 kyu - [Build a pile of Cubes]
 - 6 kyu - [Valid Phone Number]
 - 6 kyu - [Javascript Filter 3]
