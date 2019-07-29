@@ -63,6 +63,8 @@ Users are ranked based on their record of challenges completed.
 - 8 kyu - [Sum of positive]
 - 8 kyu - [Even or Odd]
 - 8 kyu - [Multiply]
+- 8 kyu - [isDivisible]
+- 8kyu - [keepHydrated]
 
 
 
