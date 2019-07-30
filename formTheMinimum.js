@@ -32,3 +32,13 @@ function minValue(values){
     console.log(resultStr)
     return parseInt(resultStr)
 }
+
+
+// refactored/cleaned up solution
+function minValue(values){
+    const result = []
+    for (let i of values) 
+        result.includes(i) ? null : result.push(i)
+    const resultStr = result.sort().toString().replace(/,/g, "")
+    return parseInt(resultStr)
+}
