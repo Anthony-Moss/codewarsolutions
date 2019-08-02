@@ -25,9 +25,9 @@ function returnChange(amount){
         }
     }
     let result = {
-        tens,
-        fives,
-        twos
+        tens : `${tens}`,
+        fives : `${fives}`,
+        twos : `${twos}`
     }
     console.log(result)
     return result
