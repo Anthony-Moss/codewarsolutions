@@ -45,6 +45,7 @@ Users are ranked based on their record of challenges completed.
 - 7 kyu - [Descending Order]
 - 7 kyu - [Shortest Word]
 - 7 kyu - [Highest and Lowest]
+- 7 kyu - [Find the stray number]
 - 8 kyu - [Sum without highest and lowest number]
 - 8 kyu - [Count of positives / sum of negatives]
 - 8 kyu - [Convert boolean values to strings 'Yes' or 'No'.]
