@@ -26,3 +26,13 @@ function stray(numbers) {
         }
     return res
 }
+
+// second try
+// much cleaner kinda refactored but really just different approach
+function stray(numbers) {
+    let numArr = numbers.sort();
+    if (numArr[0] !== numArr[1]) {
+        return numArr[0]
+    } 
+    return numArr[numArr.length-1]
+}
