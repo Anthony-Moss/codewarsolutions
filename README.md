@@ -67,6 +67,7 @@ Users are ranked based on their record of challenges completed.
 - 8 kyu - [isDivisible]
 - 8kyu - [keepHydrated]
 - 8 kyu - [Convert a String to a Number]
+- 8 kyu - [Rock, Paper, Scissors]
 
 
 
