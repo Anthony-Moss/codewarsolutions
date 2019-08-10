@@ -11,3 +11,30 @@
 // I'm very curious for your solutions and the way you solve it. Maybe someone of you will find an easy pure mathematics solution.
 
 
+// first attempt
+function dontGiveMeFive(start, end)
+{
+console.log(start, end)
+    let resultArr = []
+    for (i=start; i<=end; i++) {
+        resultArr.push(i)
+    }
+
+    let minusFive = resultArr.filter((num) => {
+    let stringNum = num.toString().split("")
+    let haveFive = false
+
+    for (let j of stringNum) {
+        console.log(j)
+        if (j === '5') {
+            haveFive = true
+        }
+    }
+
+    if (!haveFive) {
+        return num
+    }
+    })
+    
+    return (resultArr.includes(0) ? minusFive.length + 1 : minusFive.length)
+}
