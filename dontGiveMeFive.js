@@ -16,25 +16,50 @@ function dontGiveMeFive(start, end)
 {
 console.log(start, end)
     let resultArr = []
+
     for (i=start; i<=end; i++) {
         resultArr.push(i)
     }
 
     let minusFive = resultArr.filter((num) => {
+        let stringNum = num.toString().split("")
+        let haveFive = false
+
+        for (let j of stringNum) {
+            return (j === '5' ? haveFive = true : null)
+        }
+        return (haveFive ? null : num)
+    })
+    return (resultArr.includes(0) ? minusFive.length + 1 : minusFive.length)
+}
+
+
+
+
+
+
+
+function dontGiveMeFive(start, end)
+{
+console.log(start, end)
+let resultArr = []
+  for (i=start; i<=end; i++) {
+    resultArr.push(i)
+  }
+  let minusFive = resultArr.filter((num) => {
+    let newResult = []
     let stringNum = num.toString().split("")
     let haveFive = false
-
-    for (let j of stringNum) {
-        console.log(j)
+      for (let j of stringNum) {
+          console.log(j)
         if (j === '5') {
-            haveFive = true
+//           console.log(`${j} this should be 5`)
+          haveFive = true
         }
-    }
-
-    if (!haveFive) {
+      }
+      if (!haveFive) {
         return num
     }
-    })
-    
-    return (resultArr.includes(0) ? minusFive.length + 1 : minusFive.length)
+  })
+  return (resultArr.includes(0) ? minusFive.length + 1 : minusFive.length)
 }
