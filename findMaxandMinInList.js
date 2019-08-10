@@ -19,3 +19,9 @@ var max = function(list){
     list.sort((a, b) => a - b)
     return list[list.length-1];
 }
+
+
+const minMax = (list) => {
+    list.sort((a, b) => a - b)
+    return `Max: ${list[list.length-1]}, Min: ${list[0]}`
+}
