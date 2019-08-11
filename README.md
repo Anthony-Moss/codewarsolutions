@@ -46,6 +46,7 @@ Users are ranked based on their record of challenges completed.
 - 7 kyu - [Shortest Word]
 - 7 kyu - [Highest and Lowest]
 - 7 kyu - [Find the stray number]
+- 7 kyu - [Don't give me Five!]
 - 8 kyu - [Sum without highest and lowest number]
 - 8 kyu - [Count of positives / sum of negatives]
 - 8 kyu - [Convert boolean values to strings 'Yes' or 'No'.]
@@ -68,6 +69,8 @@ Users are ranked based on their record of challenges completed.
 - 8kyu - [keepHydrated]
 - 8 kyu - [Convert a String to a Number]
 - 8 kyu - [Rock, Paper, Scissors]
+- 8 kyu -[Beginner - Lost Without a Map]
+
 
 
 
