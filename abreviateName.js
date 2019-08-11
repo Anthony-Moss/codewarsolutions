@@ -8,4 +8,11 @@
 
 // Patrick Feeney => P.F
 
+// first attempt
+function abbrevName(name){
+    let initials = [];
+    let nameArr = name.toUpperCase().split(" ");
+    nameArr.forEach((name) => initials.push(name[0]))
+    return `${initials[0]}.${initials[1]}`
+}
 
