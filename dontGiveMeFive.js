@@ -11,26 +11,38 @@
 // I'm very curious for your solutions and the way you solve it. Maybe someone of you will find an easy pure mathematics solution.
 
 
-// first attempt
-function dontGiveMeFive(start, end)
-{
-console.log(start, end)
+// first attempt refactored 
+function dontGiveMeFive(start, end) {
+    // sets arr we will use to hold numbers as we find the 5's
     let resultArr = []
 
+    // create loop from start num to end num inputs
     for (i=start; i<=end; i++) {
+        // pushs all numbers from start to end to resultArr
         resultArr.push(i)
     }
 
+    // use filter to remove numbers containing 5, returns array without the 5 nums
     let minusFive = resultArr.filter((num) => {
+        // turn num to array for iteration
         let stringNum = num.toString().split("")
+        // sets variable for recognizing 5's
         let haveFive = false
 
+        // loop through num to see if any 5's
         for (let j of stringNum) {
-            return (j === '5' ? haveFive = true : null)
+            // if any digit is 5 haveFive is set to true so we know that number contains a 5 and shouldnt be counted for answer
+            // note its a string bc  of what stringNum was
+            j === '5' ? haveFive = true : null
         }
+        // if haveFive true dont want to include in arr
+        // if haveFive isn't true we want it in arr
         return (haveFive ? null : num)
     })
-    return (resultArr.includes(0) ? minusFive.length + 1 : minusFive.length)
+//     we cannot get 0's in our mapped array
+//     so if our numArray would contain 0 we add one to our response
+//     else we just return the minusFive length as it has all numbers needed
+    return ((resultArr.includes(0)) ? minusFive.length + 1 : minusFive.length)
 }
 
 
@@ -39,27 +51,26 @@ console.log(start, end)
 
 
 
-function dontGiveMeFive(start, end)
-{
-console.log(start, end)
+
+// first attempt no refactor, for referece
+function dontGiveMeFive(start, end) {
 let resultArr = []
-  for (i=start; i<=end; i++) {
-    resultArr.push(i)
-  }
-  let minusFive = resultArr.filter((num) => {
+    for (i=start; i<=end; i++) {
+        resultArr.push(i)
+    }
+    let minusFive = resultArr.filter((num) => {
     let newResult = []
     let stringNum = num.toString().split("")
     let haveFive = false
-      for (let j of stringNum) {
-          console.log(j)
+    for (let j of stringNum) {
+        console.log(j)
         if (j === '5') {
-//           console.log(`${j} this should be 5`)
-          haveFive = true
+            haveFive = true
         }
-      }
-      if (!haveFive) {
+    }
+    if (!haveFive) {
         return num
     }
-  })
-  return (resultArr.includes(0) ? minusFive.length + 1 : minusFive.length)
+    })
+    return (resultArr.includes(0) ? minusFive.length + 1 : minusFive.length)
 }
