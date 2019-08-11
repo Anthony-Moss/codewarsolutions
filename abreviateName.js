@@ -16,3 +16,10 @@ function abbrevName(name){
     return `${initials[0]}.${initials[1]}`
 }
 
+
+// refactored - forEach is completely unneeded
+
+function abbrevName(name){
+    let nameArr = name.toUpperCase().split(" ");
+    return `${nameArr[0][0]}.${nameArr[1][0]}`
+}
