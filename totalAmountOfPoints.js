@@ -12,3 +12,15 @@
 // there are 10 matches in the championship
 // 0 <= x <= 4
 // 0 <= y <= 4
+
+function points(games) {
+    let res = 0
+    for (let x of games) {
+        if (x[0] > x[2]) {
+            res += 3
+        } else if (x[0] === x[2]) {
+            res += 1
+        }
+    }
+    return res
+}
