@@ -10,3 +10,17 @@
 // GetSum(-1, 0) == -1 // -1 + 0 = -1
 // GetSum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
 
+// first attempt non-refactored
+function GetSum( a,b ) {
+    let low = a
+    let high = b
+    let res = 0
+    if (a > b) {
+      low = b
+      high = a
+    }
+    for (i=low; i<=high; i++) {
+         res += i
+    }
+    return res
+  }
