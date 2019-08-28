@@ -21,6 +21,6 @@ function findOutlier(integers) {
     }
     for (let i of integers) {
         (Math.abs(i) % 2 === oddOrEven ? res = i : null)
-}
-    return res
     }
+    return res
+}
