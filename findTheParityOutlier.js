@@ -7,7 +7,7 @@
 // [160, 3, 1719, 19, 11, 13, -21]
 // Should return: 160 (the only even number)
 
-
+// first attempt to just get answer, not refactored
 function findOutlier(integers) {
     let oddOrEven = 0
     let res = 0
@@ -23,4 +23,20 @@ function findOutlier(integers) {
         (Math.abs(i) % 2 === oddOrEven ? res = i : null)
     }
     return res
+}
+
+// Second attempt trying to make a cleaner solution
+
+function findOutlier(integers) {
+    const even = integers.filter((num) => {
+        return num % 2 === 0
+    })
+
+    const odd = integers.filter((num) => {
+        return num % 2 !== 0
+    })
+
+    return even.length < odd.length 
+        ? even[0] 
+        : odd[0]
 }
