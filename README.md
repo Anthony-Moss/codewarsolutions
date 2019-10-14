@@ -71,6 +71,10 @@ Users are ranked based on their record of challenges completed.
 - 8 kyu - [Rock, Paper, Scissors]
 - 8 kyu -[Beginner - Lost Without a Map]
 
+### Python
+
+- 8 kyu - [Even or Odd](Python/Even_Or_Odd.py)
+
 
 
 
